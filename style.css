@@ -1,25 +1,67 @@
-body{
+body,html{
+    height:100%;
+    width: 100%;
+    padding: 0.5%;
     background-image: url("room.jpg");
  
 }
-#welcome_tilte {
-    color:white;
-   
-  }
-#container{
-/* background-image:linear-gradient(rgb(255, 255, 255), rgb(0, 0, 0)); */
+.container{
+    height:100%;
+    width:99%;
+    text-align: center;
+    background-color:rgba(77,28,00,0.5);
+    border-radius: 5px;
+    
 }
-/* #responsive{
-    width: 100%;
-    height: auto;
+.header{
+    float: left;
+    background-color:white;
+    height:10%;
+    width:100%;
+    padding: 30px 30px 30px 30px;
+    opacity:0.9;
+  }
 
-} */
+.content-div{
+    float:left;
+    /* background-color:red; */
+    height:70%;
+    width:90%;
+    padding: 30px 30px 30px 30px;
+    opacity:0.9;
+  }
 
-/* input */
+  .right-bar{
+    float:left;
+    background-color:blue;
+    height:70%;
+    width:10%;
+    opacity:0.9;
+    color: white;
+  }
+
+.footer{
+    float: left;
+    background-color:green;
+    height:20%;
+    width:100%;
+    padding: 30px 30px 30px 30px;
+    opacity:0.9;
+  }
+
+h1{
+    color:white;
+}
+h6{
+    color:white
+}
+
+
+/* input ------------------------------------------------------------------------------------------------------------------------------ */
 input[type=text],input[type=password] {
 
-    padding: 1px 20px;
-    margin: 8px 0;
+    padding: 10px 75px;
+    margin:  0 20px;
     display: inline-block;
     border-radius: 4px;
     box-sizing: border-box;
@@ -28,13 +70,14 @@ input[type=text],input[type=password] {
     }
 
 
-    /* Add a background color when the inputs get focus */
+/* Add a background color when the inputs get focus */
     input[type=text]:focus, input[type=password]:focus {
     background-color: #f1f1f1;
     outline: none;
+    border: 1px solid #ccc;
     }
           
-    /* button */
+/* button ----------------------------------------------------------------------------------------------------------------------------*/
 .button {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 18px;
@@ -48,7 +91,6 @@ input[type=text],input[type=password] {
 }
 
 /* button shapes */
-
 .shape-2 {
     -webkit-border-radius: 50px 5px 50px 5px;
     border-radius: 50px 5px 50px 5px;
@@ -59,10 +101,8 @@ input[type=text],input[type=password] {
 } 
 
 /* button colors */
-
-
 .green {
-    border: solid 1px #A0522D;
+    border: solid 1px ;
     background-color: #8B4513;
     background: -moz-linear-gradient(top, #A0522D 0%, #8B4513 100%);
     background: -webkit-linear-gradient(top, #A0522D 0%, #8B4513 100%);
@@ -77,26 +117,25 @@ input[type=text],input[type=password] {
 
 .green:hover {
     background-color: #8B4513;
-    background: -moz-linear-gradient(top, #A0522D 0%, #A0522D 100%);
-    background: -webkit-linear-gradient(top, #A0522D 0%, #A0522D 100%);
-    background: -o-linear-gradient(top, #A0522D 0%, #A0522D 100%);
-    background: -ms-linear-gradient(top, #A0522D 0% ,#A0522D 100%);
+    background: -moz-linear-gradient(top, #4d2800 0%, #4d2800 100%);
+    background: -webkit-linear-gradient(top, #4d2800 0%, #4d2800 100%);
+    background: -o-linear-gradient(top, #4d2800 0%, #4d2800 100%);
+    background: -ms-linear-gradient(top, #4d2800 0% ,#4d2800 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#67910b', endColorstr='#67910b',GradientType=0 );
-    background: linear-gradient(top, #A0522D 0% ,#A0522D 100%);
+    background: linear-gradient(top, #4d2800 0% ,#4d2800 100%);
 }
 
 .green:active {
-    background-color: #A0522D;
-    background: -moz-linear-gradient(top, #A0522D 0%,  #8B4513  100%);
-    background: -webkit-linear-gradient(top, #A0522D 0%,  #8B4513  100%);
-    background: -o-linear-gradient(top, #A0522D 0%, #8B4513  100%);
-    background: -ms-linear-gradient(top, #A0522D 0% , #8B4513  100%);
+    background-color: #663300;
+    background: -moz-linear-gradient(top, #663300 0%,  #663300  100%);
+    background: -webkit-linear-gradient(top, #663300 0%,  #663300  100%);
+    background: -o-linear-gradient(top, #663300 0%, #8B4513  100%);
+    background: -ms-linear-gradient(top, #663300 0% , #8B4513  100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#486608', endColorstr='#486608',GradientType=0 );
-    background: linear-gradient(top, #A0522D 0% , #8B4513  100%);
+    background: linear-gradient(top, #663300 0% , #8B4513  100%);
 }
 
 /* button effects */
-
 .effect-4 {
     transition: border-radius 1s;
     -webkit-transition: border-radius 1s;
@@ -113,4 +152,39 @@ input[type=text],input[type=password] {
     -moz-border-radius-bottomleft: 5px;
     -moz-border-radius-bottomright: 50px;
 }
+/* -----------------------------------------------button ends------------------------------------------------------------------------------------- */
 
+/*search style */
+.fa {
+    padding: 10px 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;    
+    border-radius: 50%;
+  }
+  
+  .fa:hover {     
+      background:#4d2800 ;
+  }
+
+  .fa-search {
+    background: #A0522D;
+    color: white;
+  }
+  
+  
+  /* search bar*/
+
+
+  .search{
+      height:100px;
+      background-color: grey;
+      text-align: center;
+      vertical-align: middle;
+      padding-top: 25px;
+  }
+
+  .search-icon{
+      background-image:url("https://img.icons8.com/fluent/48/000000/search.png");    
+}
