@@ -9,48 +9,73 @@
     <title>AWOL_Adventure</title>
         
     <!-- linking javascript to HTMl -->
-    <script type="text/javascript" src="./main.js"></script>
+
+    <script type="text/javascript" src="main.js"></script>
+
     <!-- linking stylesheet to HTMl -->
-    <link rel="stylesheet" href="./style.css">
-    <!-- linking stylesheet to HTMl -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pop-up.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <!-- Connectiing Scripts to HTML  -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"></script>
+    <!-- open and close same button -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
     </head>
     <body>
         <div class="container">
-            <div class="header">  <!--header starts--> 
+            <div class="header">  <!--header-div starts--> 
                 <div class="left_header">
                     <h6>Don't Die!!!</h6>  
                 </div>
                 <div class="right_header">
-                    <img class="timer_clock" id="responsive"  src="clock.png" alt="clock">
+                    <img class="timer_clock" src="clock.png" alt="clock">
                 </div>
-                
-                
-            </div><!-- header ends-->
-            
+            </div><!-- header-div ends -->
+
             <div class="content-div">  <!-- content-div starts -->
-                <h1>Welcome  to AWOL Portal</h1>   
-                <h6>Use Your Password Provided by AWOL</h6><br>
-                <form  class="form" method="post" action="#" >
-                    <input type="text" placeholder="Enter Your Name" name="name"><br>
-                    <input type="password" placeholder="Enter Password" name="psw"><br><br>
-                    <button  class="button square green effect-4">START</button> 
-                </form>
+               <!-- <script>document.write("<p>"+text_Array+"</p>")</script> -->
+                <div class="p_questions">
+                    <p class="paragraph">Filler text is text that shares some characteristics of a real written text, but is random or otherwise generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter. The process of using filler text is sometimes called greeking, although the text itself may be nonsense, or largely Latin, as in Lorem ipsum.</p>
+                    <input type="text" id="puzzle_answer" name="answer"><br><br>
+                    <button  onclick="puzzle_answer()">Submit</button>
+                    <!-- Alert comment when user enter the wrong answer -->
+                   <p class="wrong_answer_alert"> </p>
+                </div> <!-- header-div ends -->
+
+                <!-- <div id="notepad-heading" contenteditable="true"></div> -->
+                <div id="notepad-content" contenteditable="true"></div>
+               
             </div> <!-- content- div  ends-->
 
             <div class="right-bar">  <!-- right-div  starts-->
-                <div class="search"><a href="https://www.google.com/" target='_blank'><img id="responsive"  src="https://img.icons8.com/fluent/48/000000/search.png"></a></div>
-                <div class="notepad"><img  class="write_note" id="responsive" src="notepad.jpg" alt="clock"></div>
-               <div class="help_div"><img class="help_image"  id="responsive" src="about.png" alt="Help_about"></div>
+                <div class="search">
+                    <a href="https://www.google.com/" target='_blank'><img  src="https://img.icons8.com/fluent/48/000000/search.png"></a>
+                </div>
+                <div class="notepad">
+                    <img onclick="show_notepad()" class="write_note"  src="notepad.jpg" alt="notepad">
+                </div>
+               <div class="help_div">
+                   <img onclick="display_help()" class="help_image"  src="about.png" alt="Help_about">
+                </div>
+
             </div> <!-- right-bar ends-->
 
-            <div class="footer"> <!--footer starts--> 
-                <div class ="help_man"><img class="avatar"  id="responsive" src="beard man.jpg" alt="clock"> </div>
-            </div><!-- footer ends-->
-
+                 <!--footer starts--> 
+             <div class ="footer">
+                 <div class="help-man" >
+                      <img class="avatar" onclick="pop_Up()" src="beard man.jpg" alt="beardman">
+                    </div>
+                    <div class="guide"></div>
+                    
+             </div> <!-- footer ends-->
         </div><!-- container  ends-->
     </body>
 </html>

@@ -1,7 +1,7 @@
 body,html{
     height:100%;
     width: 100%;
-    padding: 0.5%;
+    /* padding: 0.5%; */
     background-image: url("room.jpg");
  
 }
@@ -12,36 +12,6 @@ body,html{
     background-color:rgba(77,28,00,0.5);
     border-radius: 5px;
 }
-.header{
-    float: left;
-    background-color:black;
-    height:10%;
-    width:100%;
-  }
-
-.content-div{
-    float:left;
-    /* height:70%;*/
-    width:90%; 
-    padding: 30px 30px 30px 30px;
-    opacity:0.9;
-  }
-
-.right-bar{
-    float:left;
-    background-color:blue;
-    height:70%;
-    width:10%;
-    opacity:0.9;
-    color: white;
-}
-
-.footer{
-    float: left;
-    background-color:green;
-    height:20%;
-    width:100%;
-  }
 
 h1{
     color:white;
@@ -49,13 +19,22 @@ h1{
 h6{
     color:white
 }
-
-#responsive{
+p{
+    text-align:center;
+}
+/* #responsive{
     width: 100%;
     height: auto;
-}
+} */
+
 
 /* -----------------------------------------------Header------------------------------------------------------------------------------- */
+.header{
+    float: left;
+    background-color:black;
+    height:10%;
+    width:100%;
+  }
 .left_header{
     float:left;
     width:90%;
@@ -67,11 +46,19 @@ h6{
 }
 
 .timer_clock{
-    width:60%;     
+    height:10;
+    width:100%;     
 }
 
 /* -----------------------Right Side bar ------------------------------------------------------------------------------------------------------------------------------- */
-
+.right-bar{
+    float:left;
+    background-color:blue;
+    height:70%;
+    width:10%;
+    opacity:0.9;
+    color: white;
+}
 .search{
     height:30%;
     /* background-color: yellow; */
@@ -89,119 +76,86 @@ h6{
     max-width: 100%;
     height: auto;  
 }
+/* chnagng the help div to example2 div for testing */
 .help_div{
     height:30%;
     /* background-color: greenyellow; */
     text-align: center;
     padding-top: 25%;
 }
+
 .help_image{
     width: 50%;
 }
 
+/* ----------------------------------------Content----------------------------------------------------------------------------------------------- */
+.content-div{
+    float:left;
+    /* height:70%;*/
+    width:90%; 
+    padding: 30px 30px 30px 30px;
+    opacity:0.9;
+    color:white;
+    text-align: center;
+  }
+#help-display{
+    position:fixed;
+    left:30%;
+    top:10%;
+    width:400px;
+    height:400px;
+    background-image: url("room.jpg");
+    color: white;
+    font-size: 10px;
+    padding: 1%;
+}
+#notepad-content{
+    display:none;
+    position:fixed;
+    left:30%;
+    top:10%;
+    width:400px;
+    height:400px;
+    /* background-image: url("room.jpg"); */
+    background-color: black;
+    opacity:0.8;
+    border-radius: 1%;
+    color: white;
+    font-size: 10px;
+    padding: 1%;
+}
+.wrong_answer_alert{
+    text-align:center;
+}
+/* ----------------------------------------Content- finish---------------------------------------------------------------------------------------------- */
 /* ----------------------------------------Footer----------------------------------------------------------------------------------------------- */
-.avatar{
+.footer{
+    float: left;
+    text-align: left;
+    background-color:green;
+    height:20%;
     width:100%;
-    
+    /* background-image: url("room.jpg"); */
+    color:white;
+  }
+.help-man{
+    float:left;
+    /* height:100%; */
+    width: 20%;
+    /* background: #ff0000 */
 }
-.help_man{
-    width:20%;
+.avatar{
+    width:70%;
+    /* text-align:left; */
+}
+.guide{
+    float:right;
+    height: 100%;
+    width: 80%;
     text-align:left;
+    /* background: yellow; */
 }
-
-/* ------------------------------------------Input ------------------------------------------------------------------------------------------------------------------------------ */
-input[type=text],input[type=password] {
-
-    padding: 1px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: 0 0 5px #8B4513 ;
-    border: 2px solid #8B4513 ;
-    }
-
-
-/* Add a background color when the inputs get focus */
-    input[type=text]:focus, input[type=password]:focus {
-    background-color: #f1f1f1;
-    outline: none;
-    border: 1px solid #ccc;
-    }
-          
-/* ----------------------------------------------------Button ----------------------------------------------------------------------------------------------------------------------------*/
-.button {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    color: #FFFFFF;
-    padding: 10px 75px;
-    margin: 0 20px;
-    text-shadow: 2px 2px 1px #595959;
-    filter: dropshadow(color=#595959, offx=1, offy=1);
-    text-decoration: none;
+.guide-display{
+   
+  
 }
-
-/* button shapes */
-.shape-2 {
-    -webkit-border-radius: 50px 5px 50px 5px;
-    border-radius: 50px 5px 50px 5px;
-    -moz-border-radius-topleft: 50px;
-    -moz-border-radius-topright: 5px;
-    -moz-border-radius-bottomleft: 5px;
-    -moz-border-radius-bottomright: 50px;
-} 
-
-/* button colors */
-.green {
-    border: solid 1px ;
-    background-color: #8B4513;
-    background: -moz-linear-gradient(top, #A0522D 0%, #8B4513 100%);
-    background: -webkit-linear-gradient(top, #A0522D 0%, #8B4513 100%);
-    background: -o-linear-gradient(top, #A0522D 0%, #8B4513 100%);
-    background: -ms-linear-gradient(top, #A0522D 0% ,#8B4513 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#709e0e', endColorstr='#709e0e',GradientType=0 );
-    background: linear-gradient(top, #A0522D 0% ,#A0522D 100%);
-    -webkit-box-shadow: 0px 0px 1px #A0522D, inset 0px 0px 1px #FFFFFF;
-    -moz-box-shadow: 0px 0px 1px #A0522D, inset 0px 0px 1px #FFFFFF;
-    box-shadow: 0px 0px 1px #A0522D, inset 0px 0px 1px #FFFFFF;
-}
-
-.green:hover {
-    background-color: #8B4513;
-    background: -moz-linear-gradient(top, #4d2800 0%, #4d2800 100%);
-    background: -webkit-linear-gradient(top, #4d2800 0%, #4d2800 100%);
-    background: -o-linear-gradient(top, #4d2800 0%, #4d2800 100%);
-    background: -ms-linear-gradient(top, #4d2800 0% ,#4d2800 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#67910b', endColorstr='#67910b',GradientType=0 );
-    background: linear-gradient(top, #4d2800 0% ,#4d2800 100%);
-}
-
-.green:active {
-    background-color: #663300;
-    background: -moz-linear-gradient(top, #663300 0%,  #663300  100%);
-    background: -webkit-linear-gradient(top, #663300 0%,  #663300  100%);
-    background: -o-linear-gradient(top, #663300 0%, #8B4513  100%);
-    background: -ms-linear-gradient(top, #663300 0% , #8B4513  100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#486608', endColorstr='#486608',GradientType=0 );
-    background: linear-gradient(top, #663300 0% , #8B4513  100%);
-}
-
-/* button effects */
-.effect-4 {
-    transition: border-radius 1s;
-    -webkit-transition: border-radius 1s;
-    -moz-transition: border-radius 1s;
-    -o-transition: border-radius 1s;
-    -ms-transition: border-radius 1s;
-}
-
-.effect-4:hover {
-    border-radius: 50px 5px 50px 5px;
-    -webkit-border-radius: 50px 5px 50px 5px;
-    -moz-border-radius-topleft: 50px;
-    -moz-border-radius-topright: 5px;
-    -moz-border-radius-bottomleft: 5px;
-    -moz-border-radius-bottomright: 50px;
-}
-/* -----------------------------------------------Button ends------------------------------------------------------------------------------------- */
