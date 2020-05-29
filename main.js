@@ -1,8 +1,15 @@
-//  global variable
+// Global variables                                                                                                    *
+// difine global variables that will be use throughout the code                                                        *
+// *********************************************************************************************************************
+var _csvfile = 'puzzle_questions';
+var _jsonData; 
 var text_Array="Empty Array";
 var toggle = 1;
 var toggle1= 1;
 var toggle2= 1;
+
+
+
 // --------when the page load -------reading and loading the csv content on the help display text--------------------------------------------------------------
 
    
@@ -52,7 +59,7 @@ function show_notepad(){
         setInterval(function() {
         localStorage["text"] = document.getElementById("notepad-content").innerHTML; // content div
          }, 1000);
-        // console.log(toggle1);
+        console.log( localStorage["text"]);
     }
     if (toggle1 == -1){
         $(".content-div").empty();

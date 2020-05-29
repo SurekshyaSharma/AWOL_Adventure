@@ -47,7 +47,7 @@ p{
 
 .timer_clock{
     height:10;
-    width:100%;     
+    width:80%;     
 }
 
 /* -----------------------Right Side bar ------------------------------------------------------------------------------------------------------------------------------- */
@@ -60,28 +60,32 @@ p{
     color: white;
 }
 .search{
-    height:30%;
+    height:20%;
     /* background-color: yellow; */
     text-align: center;
     padding-top: 30%;
 }
-
 .notepad{
     height:30%;
     /* background-color: grey; */
     text-align: center;
     padding-top: 10%;
 }
-.write_note{
-    max-width: 100%;
-    height: auto;  
-}
-/* chnagng the help div to example2 div for testing */
-.help_div{
+.map_div{
     height:30%;
     /* background-color: greenyellow; */
     text-align: center;
     padding-top: 25%;
+}
+.help_div{
+    height:30%;
+    /* background-color: greenyellow; */
+    text-align: center;
+    /* padding-top: 25%; */
+}
+.write_note{
+    max-width: 100%;
+    height: auto;  
 }
 
 .help_image{
@@ -100,29 +104,33 @@ p{
   }
 #help-display{
     position:fixed;
+    text-align:center;
     left:30%;
     top:10%;
-    width:400px;
-    height:400px;
-    background-image: url("room.jpg");
+    width:50%;
+    height:50%;
+    background-color: black;
+    opacity:0.8;
+    /* background-image: url("room.jpg"); */
     color: white;
     font-size: 10px;
-    padding: 1%;
+    /* padding: 2%; */
 }
 #notepad-content{
     display:none;
+    text-align:center;
     position:fixed;
     left:30%;
     top:10%;
-    width:400px;
-    height:400px;
+    width:50%;
+    height:50%;
     /* background-image: url("room.jpg"); */
     background-color: black;
     opacity:0.8;
     border-radius: 1%;
     color: white;
     font-size: 10px;
-    padding: 1%;
+    padding: 2%;
 }
 .wrong_answer_alert{
     text-align:center;
@@ -145,7 +153,7 @@ p{
     /* background: #ff0000 */
 }
 .avatar{
-    width:70%;
+    width:50%;
     /* text-align:left; */
 }
 .guide{

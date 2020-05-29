@@ -6,7 +6,7 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Surekshya Sharma & Pravin Dhakal">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWOL_Adventure</title>
+    <title>AWL_Adventure</title>
         
     <!-- linking javascript to HTMl -->
 
@@ -16,18 +16,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pop-up.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- map icon -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   
     <!-- Connectiing Scripts to HTML  -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"></script>
-    <!-- open and close same button -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
+    
     </head>
     <body>
         <div class="container">
@@ -57,14 +55,19 @@
 
             <div class="right-bar">  <!-- right-div  starts-->
                 <div class="search">
-                    <a href="https://www.google.com/" target='_blank'><img  src="https://img.icons8.com/fluent/48/000000/search.png"></a>
+                    <!-- <a href="https://www.google.com/" target='_blank'><img  src="https://img.icons8.com/fluent/48/000000/search.png"></a> -->
+                    <a href="https://www.google.com/" target='_blank'><i class="fa fa-search"></i></a>
                 </div>
                 <div class="notepad">
                     <img onclick="show_notepad()" class="write_note"  src="notepad.jpg" alt="notepad">
                 </div>
+                <div class="map_div">
+                    <a href="https://www.google.com/maps" target='_blank'><i class='fas fa-map-marker-alt' style='font-size:24px'></i></a>
+                 </div>
                <div class="help_div">
                    <img onclick="display_help()" class="help_image"  src="about.png" alt="Help_about">
                 </div>
+                
 
             </div> <!-- right-bar ends-->
 
@@ -72,8 +75,8 @@
              <div class ="footer">
                  <div class="help-man" >
                       <img class="avatar" onclick="pop_Up()" src="beard man.jpg" alt="beardman">
-                    </div>
-                    <div class="guide"></div>
+                </div>
+                <div class="guide"></div>
                     
              </div> <!-- footer ends-->
         </div><!-- container  ends-->
