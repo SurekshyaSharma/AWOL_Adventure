@@ -117,7 +117,7 @@ p{
     /* padding: 2%; */
 }
 #notepad-content{
-    display:none;
+    /* display:none; */
     text-align:center;
     position:fixed;
     left:30%;

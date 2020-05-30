@@ -43,10 +43,9 @@ var toggle = 1;
 
 
 function show_notepad(){
-    $(".content-div").show();
     if (toggle != -1 ){
-        $(".content-div").empty();
-        $("#notepad-content").append("<p>"+"This is your notepad."+"</p>");
+        // $(".content-div").empty();
+        $(".content-div").append( "<div id=\"notepad-content\"><h6>This is the notepad</h6><br></div>");
     }
     if (toggle == -1){
         $(".content-div").empty();
@@ -61,7 +60,7 @@ function display_help(){
     // $(".p_questions").hide();
     if (toggle != -1){
         $(".content-div").empty();
-        $(".content-div").append("<div id=\"help-display\">"+"This is the help text."+"<br>"+"<br>"+"<p>"+text_Array+"</p></div>")
+        $(".content-div").append("<div id=\"help-display\">"+"<h6>This is the help text.</h6>"+"<br>"+"<p>"+text_Array+"</p></div>")
     }
     if (toggle == -1){
         $(".content-div").empty();
