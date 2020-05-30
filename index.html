@@ -39,18 +39,12 @@
             </div><!-- header-div ends -->
 
             <div class="content-div">  <!-- content-div starts -->
-               <!-- <script>document.write("<p>"+text_Array+"</p>")</script> -->
                 <div class="p_questions">
-                    <p class="paragraph">Filler text is text that shares some characteristics of a real written text, but is random or otherwise generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter. The process of using filler text is sometimes called greeking, although the text itself may be nonsense, or largely Latin, as in Lorem ipsum.</p>
-                    <input type="text" id="puzzle_answer" name="answer"><br><br>
-                    <button  onclick="puzzle_answer()">Submit</button>
-                    <!-- Alert comment when user enter the wrong answer -->
-                   <p class="wrong_answer_alert"> </p>
+                    <div class="csv-read">
+                        <button onclick="csv_json(data)">Question</button>
+                    </div>
                 </div> <!-- header-div ends -->
-
-                <!-- <div id="notepad-heading" contenteditable="true"></div> -->
                 <div id="notepad-content" contenteditable="true"></div>
-               
             </div> <!-- content- div  ends-->
 
             <div class="right-bar">  <!-- right-div  starts-->
@@ -67,8 +61,6 @@
                <div class="help_div">
                    <img onclick="display_help()" class="help_image"  src="about.png" alt="Help_about">
                 </div>
-                
-
             </div> <!-- right-bar ends-->
 
                  <!--footer starts--> 

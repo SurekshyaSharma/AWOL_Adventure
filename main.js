@@ -1,12 +1,11 @@
 // Global variables                                                                                                    *
-// difine global variables that will be use throughout the code                                                        *
+// define global variables that will be use throughout the code                                                        *
 // *********************************************************************************************************************
-var _csvfile = 'puzzle_questions';
-var _jsonData; 
+
+var jsonData; 
 var text_Array="Empty Array";
 var toggle = 1;
-var toggle1= 1;
-var toggle2= 1;
+
 
 
 
@@ -19,65 +18,50 @@ var toggle2= 1;
     if (this.readyState == 4 && this.status == 200) {
         // document.getElementById("help_display").innerHTML = this.responseText;
         text_Array = this.responseText;
-        console.log(text_Array);
+        // console.log(text_Array);
     }
     };    
     http.send();
 
-// -----------------------------------submit the answer with the submit button-------------------------------------------------------------------
-function puzzle_answer() {
+// reading xlsx file--------------------------------------------------------------------------------------------------------------------------
+    var fileName = "puzzle_question.csv";
+    var data = "";
 
-    var p_answer = document.getElementById("puzzle_answer").value;
-    console.log("Guesses:",p_answer);
-    var awol_answer="happy";
-    // if (p_answer == ""){
-    //     alert("Enter the answer.")
-    // }
+    req = new XMLHttpRequest();
+    req.open("GET", fileName, false);
 
-    if (p_answer == awol_answer && p_answer !=""){
-        $(".content-div").empty();
-        $(".content-div").append(
-            "<p>"+"Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting,remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." +"</p>"  
-            +"<input>"+"<br>"+"<br>"+"<button>"+"Submit"+"</button>"
-            ) ;
-    } else if(p_answer == ""){
-        $(".wrong_answer_alert").empty();
-        $(".wrong_answer_alert").append("<p>Enter the answer.</p>");
-    }else {
-        $(".wrong_answer_alert").empty();
-        $(".wrong_answer_alert").append("<p>Wrong Answer. Look for the hint or ask your guide.</p>");
-    } 
-}
+    req.addEventListener("readystatechange", function (e) {
+      data = req.responseText ;
+    //   console.log(data)
+    });
+
+    req.send();
+
+
 
 //   -------------------------show_notepad()"---------------------------------------------------------------------------------------------------
-function show_notepad(){
-    
-    if (toggle1 == 1){
-        $("#notepad-content").show();
-        document.getElementById("notepad-content").innerHTML = localStorage["text"] || "Text is automatically saved every second. Feel free to edit. "; // default text
 
-        setInterval(function() {
-        localStorage["text"] = document.getElementById("notepad-content").innerHTML; // content div
-         }, 1000);
-        console.log( localStorage["text"]);
+
+function show_notepad(){
+    $(".content-div").show();
+    if (toggle != -1 ){
+        $(".content-div").empty();
+        $("#notepad-content").append("<p>"+"This is your notepad."+"</p>");
     }
-    if (toggle1 == -1){
+    if (toggle == -1){
         $(".content-div").empty();
         $(".content-div").append("<p>Main Page</p>");
-        console.log(toggle1);
-        
     }
-   
-    toggle1 *= -1;
-}
 
+    toggle *= -1;
+    
+}
+//  display help display by reading csv file.
 function display_help(){
     // $(".p_questions").hide();
-    if (toggle != -1 || toggle != -1){
+    if (toggle != -1){
         $(".content-div").empty();
-        $(".content-div").append("<div id=\"help-display\">"+"This is the help text."+"<br>"+"<br>"+"<p>"+text_Array+"</p></div>");
-        
-        
+        $(".content-div").append("<div id=\"help-display\">"+"This is the help text."+"<br>"+"<br>"+"<p>"+text_Array+"</p></div>")
     }
     if (toggle == -1){
         $(".content-div").empty();
@@ -90,16 +74,63 @@ function display_help(){
 //-------------------------------------------------------------------- pop up-----------------------------------------------------------------
 function pop_Up() {
     
-    if (toggle2 == 1){
+    if (toggle == 1){
         
         $(".guide").append("<p>"+"Hi I am your guide for this AWOL journey. I will give you hint for all the questions. Click for help.</p>");
-        console.log(toggle2);
+        console.log(toggle);
     }
-    if (toggle2 == -1){
+    if (toggle == -1){
         
         $(".guide").empty();
-        console.log(toggle2);
+        console.log(toggle);
     }
 
-    toggle2 *= -1;
+    toggle *= -1;
   }
+
+
+//.........................................reading the file and converting into format..................................................
+function csv_json(data){
+    
+    var result_json = [];
+    // var puzzle=[];
+    var allRows = data.split(/\r?\n|\r/); 
+    console.log(allRows)
+    var headers = allRows[0].split(",");
+  
+    for(var i=1;i<allRows.length;i++){
+  
+        var obj = {};
+        var currentline = allRows[i].split(",");
+  
+        for(var j=0;j<headers.length;j++){
+            obj[headers[j]] = currentline[j];
+        }
+  
+        result_json.push(obj);
+  
+    }
+    puzzle=JSON.stringify(result_json)
+    console.log(puzzle)
+    var arrayLength = puzzle.length;
+    if (toggle == 1){
+
+        for (var i = 0; i < arrayLength; i++) {
+        
+            $(".csv-read").append((puzzle[i]));
+    
+        }
+    }
+    if (toggle == -1){
+      
+        $(".csv-read").empty();
+        $(".csv-read").append("<button onclick=\"csv_json(data)\">Question</button>")
+      
+    }
+    toggle *= -1;
+    return puzzle;
+     //JavaScript object
+   
+  }
+
+  // -----------------------------------submit the answer with the submit button-------------------------------------------------------------------
