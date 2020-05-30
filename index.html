@@ -14,7 +14,7 @@
 
     <!-- linking stylesheet to HTMl -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="pop-up.css">
+    <!-- <link rel="stylesheet" href="pop-up.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- map icon -->
@@ -31,10 +31,10 @@
         <div class="container">
             <div class="header">  <!--header-div starts--> 
                 <div class="left_header">
-                    <h6>Don't Die!!!</h6>  
+                    <button class="team">Team: Rodgers</button>  
                 </div>
-                <div class="right_header">
-                    <img class="timer_clock" src="clock.png" alt="clock">
+                <div class="right_header" id="timer">
+                    <!-- <img class="timer_clock" src="clock.png" alt="clock"> -->
                 </div>
             </div><!-- header-div ends -->
 
@@ -44,7 +44,7 @@
                         <button onclick="csv_json(data)">Question</button>
                     </div>
                 </div> <!-- p_questions-div ends -->
-               
+              
             </div> <!-- content- div  ends-->
 
             <div class="right-bar">  <!-- right-div  starts-->
@@ -53,20 +53,21 @@
                     <a href="https://www.google.com/" target='_blank'><i class="fa fa-search"></i></a>
                 </div>
                 <div class="notepad">
-                    <img onclick="show_notepad()" class="write_note"  src="notepad.jpg" alt="notepad">
+                    <img onclick="show_notepad()" class="write_note"  src="notepad.png" alt="notepad">
                 </div>
-                <div class="map_div">
+                <div class="map-div">
                     <a href="https://www.google.com/maps" target='_blank'><i class='fas fa-map-marker-alt' style='font-size:24px'></i></a>
                  </div>
-               <div class="help_div">
+               <div class="help-div">
                    <img onclick="display_help()" class="help_image"  src="about.png" alt="Help_about">
                 </div>
             </div> <!-- right-bar ends-->
 
                  <!--footer starts--> 
              <div class ="footer">
-                 <div class="help-man" >
-                      <img class="avatar" onclick="pop_Up()" src="beard man.jpg" alt="beardman">
+                 <div class="help-man" id="tooltip" >
+                      <img class="avatar" onclick="pop_Up()" src="coronavirus.png" alt="beardman">
+                      <span class="tooltiptext">Click me</span>
                 </div>
                 <div class="guide"></div>
                     

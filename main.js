@@ -4,7 +4,7 @@ var jsonData;
 var text_Array="Empty Array";
 var toggle = 1;
 
-// --------when the page load -------reading and loading the csv content on the help display text--------------------------------------------------------------
+// --------when the page load -------reading and loading the csv content on the help display text-------------------------------------------
 
     var http = new XMLHttpRequest();
     http.open("GET", "help.csv", true);
@@ -37,12 +37,12 @@ var toggle = 1;
 function show_notepad(){
     if (toggle != -1 ){
         // $(".content-div").empty();
-        $(".content-div").append( "<div id=\"notepad-content\"><h6>This is the notepad</h6><br></div>");
+        $(".content-div").append( "<div id=\"notepad-content\" contenteditable=\"true\"><h6>This is the notepad</h6><br></div>");
         document.getElementById("notepad-content").innerHTML = localStorage["text"] || "Text is automatically saved every second. Feel free to edit. "; // default text
 
-        // setInterval(function() {
-        // localStorage["text"] = document.getElementById("notepad-content").innerHTML; // content div
-        //  }, 1000);
+        setInterval(function() {
+        localStorage["text"] = document.getElementById("notepad-content").innerHTML; // content div
+         }, 1000);
     }
     if (toggle == -1){
         $(".content-div").empty();
@@ -127,8 +127,13 @@ function csv_json(data){
     }
     toggle *= -1;
     return puzzle;
-     //JavaScript object
    
   }
 
-  // -----------------------------------submit the answer with the submit button-------------------------------------------------------------------
+  // -----------------------------------timer.........................------------------------------------------------------------------
+var timer_variable = setInterval(timer, 1000);
+
+function timer() {
+  var d = new Date();
+  document.getElementById("timer").innerHTML = d.toLocaleTimeString();
+}
