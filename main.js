@@ -1,17 +1,11 @@
-// Global variables                                                                                                    *
-// define global variables that will be use throughout the code                                                        *
-// *********************************************************************************************************************
+// Global variables                                                                                                                      
 
 var jsonData; 
 var text_Array="Empty Array";
 var toggle = 1;
 
-
-
-
 // --------when the page load -------reading and loading the csv content on the help display text--------------------------------------------------------------
 
-   
     var http = new XMLHttpRequest();
     http.open("GET", "help.csv", true);
     http.onreadystatechange = function() {
@@ -38,14 +32,17 @@ var toggle = 1;
     req.send();
 
 
-
 //   -------------------------show_notepad()"---------------------------------------------------------------------------------------------------
-
 
 function show_notepad(){
     if (toggle != -1 ){
         // $(".content-div").empty();
         $(".content-div").append( "<div id=\"notepad-content\"><h6>This is the notepad</h6><br></div>");
+        document.getElementById("notepad-content").innerHTML = localStorage["text"] || "Text is automatically saved every second. Feel free to edit. "; // default text
+
+        // setInterval(function() {
+        // localStorage["text"] = document.getElementById("notepad-content").innerHTML; // content div
+        //  }, 1000);
     }
     if (toggle == -1){
         $(".content-div").empty();
@@ -55,7 +52,8 @@ function show_notepad(){
     toggle *= -1;
     
 }
-//  display help display by reading csv file.
+
+// ...............................display help display by reading csv file...............................................................
 function display_help(){
     // $(".p_questions").hide();
     if (toggle != -1){
@@ -70,6 +68,7 @@ function display_help(){
     toggle *= -1;
     
 }
+
 //-------------------------------------------------------------------- pop up-----------------------------------------------------------------
 function pop_Up() {
     
