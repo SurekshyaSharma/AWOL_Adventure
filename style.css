@@ -10,7 +10,6 @@ body,html{
     width:90%;
     text-align: center;
     background-color:rgba(77,28,00,0.5);
-    border-radius: 3%;
 }
 
 h1{
@@ -20,66 +19,30 @@ h6{
     color:white;
     opacity:0.5;
 }
-p{
-    text-align:center;
-}
 
-
-
-/* -----------------------------------------------Header------------------------------------------------------------------------------- */
-.header{
-    float: left;
-    /* background-color:black; */
-    height:10%;
-    width:100%;
-  }
-.left_header{
-    float:left;
-    width:90%;
-    text-align: left;
-    /* transition: transform .2s;  */
-}
-.right_header{
-    float:left;
-    width:10%
-}
-.timer_clock{
-    height:10;
-    width:80%;         
-}
-#timer{
-   color:white;
-   font-size: 15px;
-   transition: transform .2s;
-}
-#timer:hover {
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(1.5); 
-  }
-.team{
-    background-color:rgb(116, 67, 32);
-    transition: transform .2s;
-    border-radius: 5px;
-    color:white;
-    font-family:"Brush Script MT", cursive;
-    
-}
-.team:hover {
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(1.1); 
-    cursor:context-menu;
-  }
 /* -----------------------Right Side bar ------------------------------------------------------------------------------------------------------------------------------- */
 .right-bar{
     float:left;
-    background-color:#8B4513 ;
-    height:70%;
+    background-color:#663300;
+    height:100%;
     width:10%;
-    opacity:0.6;
     color: white;
 }
+
+/* div 1 */
+#timer{
+    color:white;
+    height:5%;
+    font-size: 15px;
+    transition: transform .2s;
+ }
+#timer:hover {
+     -ms-transform: scale(1.5); /* IE 9 */
+     -webkit-transform: scale(1.5); /* Safari 3-8 */
+     transform: scale(1.5); 
+   }
+
+/* div 2 */
 .search{
     height:20%;
     /* background-color: yellow; */
@@ -92,8 +55,10 @@ p{
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.5); 
 }
+
+/* div 3 */
 .notepad{
-    height:30%;
+    height:20%;
     /* background-color: grey; */
     text-align: center;
     padding-top: 10%;
@@ -105,9 +70,14 @@ p{
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.5); 
 }
-/* --------------------- */
+.write_note{
+    max-width: 100%;
+    height: auto;  
+}
+
+/* div 4 */
 .map-div{
-    height:30%;
+    height:20%;
     /* background-color: greenyellow; */
     text-align: center;
     padding-top: 25%;
@@ -118,27 +88,54 @@ p{
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.5); 
   }
+
+  /* div 5 */
 .help-div{
-    height:30%;
+    height:15%;
     /* background-color: greenyellow; */
     text-align: center;
     cursor: pointer;
     transition: transform .2s;
+}
+.help_image{
+    width: 50%;
 }
 .help-div:hover {
     -ms-transform: scale(1.5); /* IE 9 */
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.5); 
   }
-.write_note{
-    max-width: 100%;
-    height: auto;  
-}
 
-.help_image{
-    width: 50%;
+/* div 6 */
+.help-man{
+    height:20%;
+    /* width: 100%; */
+    /* background: #ff0000; */
+    /* float:right; */
 }
-
+.gudie-left{
+    height:20%;
+    width:90%;
+    background: #ffffff;
+    float:right;
+}
+.gudie-right{
+    height:20%;
+    width:10%;
+    background: #ffffff;
+    float:right;
+}
+.avatar{
+    width: 80%;
+    transition: transform .2s;
+    cursor: pointer;
+}
+.avatar:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.2); 
+  }
+ 
 /* ----------------------------------------Content----------------------------------------------------------------------------------------------- */
 .content-div{
     float:left;
@@ -151,7 +148,7 @@ p{
   }
 #help-display{
     position:fixed;
-    text-align:center;
+    text-align:left;
     left:30%;
     top:10%;
     width:50%;
@@ -159,9 +156,9 @@ p{
     background-color: black;
     opacity:0.8;
     /* background-image: url("room.jpg"); */
-    color: white;
+    /* color: red; */
     font-size: 10px;
-    /* padding: 2%; */
+    padding: 2%;
 }
 #notepad-content{
     /* display:none; */
@@ -180,67 +177,15 @@ p{
     padding: 2%;
     cursor: text;
 }
-
 /* ----------------------------------------Content- finish---------------------------------------------------------------------------------------------- */
-/* ----------------------------------------Footer----------------------------------------------------------------------------------------------- */
-.footer{
-    float: left;
-    text-align: left;
-    /* background-color:green; */
-    height:20%;
-    width:100%;
-    /* background-image: url("room.jpg"); */
-    color:white;
-  }
-.help-man{
-    float:left;
-    /* height:100%; */
-    width: 20%;
-    /* background: #ff0000 */
+/* ----------------------------------------Floating divs- start----------------------------------------------------------------------------------------*/
+.bubble{
+    position: fixed;
+    top:75%;
+    height:23%;
+    width:65%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5x;
+    display:none;
 }
-.avatar{
-    width:50%;
-    transition: transform .2s;
-    cursor: pointer;
-}
-.avatar:hover {
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(1.1); 
-  }
-
-.guide{
-    float:right;
-    height: 100%;
-    width: 80%;
-    text-align:left;
-    /* background: yellow; */
-}
-
-/* tooltip................................. */
-#tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-  }
-  
-  /* Tooltip text */
-  #tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 1px 0;
-    border-radius: 6px;
-   
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
-  }
-  
-  /* Show the tooltip text when you mouse over the tooltip container */
-  #tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
-  /* --toot-tip ends */

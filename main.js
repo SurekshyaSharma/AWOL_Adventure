@@ -17,7 +17,7 @@ var toggle = 1;
     };    
     http.send();
 
-// reading xlsx file--------------------------------------------------------------------------------------------------------------------------
+// reading csv file--------------------------------------------------------------------------------------------------------------------------
     var fileName = "puzzle_question.csv";
     var data = "";
 
@@ -37,8 +37,9 @@ var toggle = 1;
 function show_notepad(){
     if (toggle != -1 ){
         // $(".content-div").empty();
-        $(".content-div").append( "<div id=\"notepad-content\" contenteditable=\"true\"><h6>This is the notepad</h6><br></div>");
-        document.getElementById("notepad-content").innerHTML = localStorage["text"] || "Text is automatically saved every second. Feel free to edit. "; // default text
+        $(".content-div").append( "<div id=\"notepad-content\" contenteditable=\"true\"><h1>This is the notepad</h1><br></div>");
+        document.getElementById("notepad-content").innerHTML = localStorage["text"] || "This is the notepad. "; // default text
+        // saving context every sec
 
         setInterval(function() {
         localStorage["text"] = document.getElementById("notepad-content").innerHTML; // content div
@@ -58,7 +59,7 @@ function display_help(){
     // $(".p_questions").hide();
     if (toggle != -1){
         $(".content-div").empty();
-        $(".content-div").append("<div id=\"help-display\">"+"<h6>This is the help text.</h6>"+"<br>"+"<p>"+text_Array+"</p></div>")
+        $(".content-div").append("<div id=\"help-display\">"+"<h6>This is the help text.</h6>"+"<br>"+text_Array+"</div>")
     }
     if (toggle == -1){
         $(".content-div").empty();
@@ -70,70 +71,99 @@ function display_help(){
 }
 
 //-------------------------------------------------------------------- pop up-----------------------------------------------------------------
-function pop_Up() {
+function pop_up() {
     
     if (toggle == 1){
-        
-        $(".guide").append("<p>"+"Hi I am your guide for this AWOL journey. I will give you hint for all the questions. Click for help.</p>");
-        console.log(toggle);
+        $(".bubble").show();
+        $(".bubble").append("<p>"+"Hi I am your guide for this AWOL journey. I will give you hint for all the questions.</p>");
     }
     if (toggle == -1){
         
-        $(".guide").empty();
-        console.log(toggle);
+        $(".bubble").hide();
+        $(".bubble").empty();
+
     }
 
     toggle *= -1;
   }
 
 
-//.........................................reading the file and converting into format..................................................
-function csv_json(data){
+//.........................................reading the file and converting into array..................................................
+function csv_array(data){
     
-    var result_json = [];
-    // var puzzle=[];
+    var result = [];
+    var h=[];
+    // var currentline=[];
     var allRows = data.split(/\r?\n|\r/); 
-    console.log(allRows)
+    
     var headers = allRows[0].split(",");
-  
-    for(var i=1;i<allRows.length;i++){
+    var arrayLength = allRows.length;
+
+    for(var i=1;i<arrayLength;i++){
   
         var obj = {};
         var currentline = allRows[i].split(",");
-  
         for(var j=0;j<headers.length;j++){
             obj[headers[j]] = currentline[j];
+            // console.log(headers[j])
+            // console.log(currentline[j])
+            console.log(currentline[1])
+            
         }
-  
-        result_json.push(obj);
-  
+        result.push(obj);
     }
-    puzzle=JSON.stringify(result_json)
-    console.log(puzzle)
-    var arrayLength = puzzle.length;
+//    testing-------------------------------------------------------------------------------
     if (toggle == 1){
-
-        for (var i = 0; i < arrayLength; i++) {
-        
-            $(".csv-read").append((puzzle[i]));
-    
+        $(".csv-read").empty();
+        for (var i=1;i<arrayLength;i++) {
+            $(".csv-read").append((currentline[i]));
         }
+       
+        $(".csv-read").append("<br>"+"<input onclick=\"csv_json(data)\"></input>"+"<br>"+"<br>");
+        $(".csv-read").append("<br>"+"<button onclick=\"csv_json(data)\">Question</button>"+"<br>"+"<br>");
+
+
     }
     if (toggle == -1){
       
         $(".csv-read").empty();
-        $(".csv-read").append("<button onclick=\"csv_json(data)\">Question</button>")
+        $(".csv-read").append("<button onclick=\"csv_json(data)\">Question</button>"+"<br>"+"<br>");
+
       
     }
     toggle *= -1;
-    return puzzle;
+    console.log(result)
+    // testing
+    return result;
    
   }
 
-  // -----------------------------------timer.........................------------------------------------------------------------------
-var timer_variable = setInterval(timer, 1000);
+// -----------------------------------timer.........................------------------------------------------------------------------
 
 function timer() {
-  var d = new Date();
-  document.getElementById("timer").innerHTML = d.toLocaleTimeString();
+    var dt = new Date();
+    console.log(dt)    
+    var countDownDate = dt.setHours( dt.getHours() + 1 );
+   
+   // Update the count down every 1 second
+   var x = setInterval(function() {
+   
+     // Get today's date and time
+     var now = new Date().getTime();
+       
+     // Find the distance between now and the count down date
+     var distance = countDownDate - now;
+     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+   
+     // Output the result in an element with id="timer"
+     document.getElementById("timer").innerHTML =  minutes + ":" + seconds;
+
+     // If the count down is over, write some text 
+     if (distance < 0) {
+       clearInterval(x);
+       document.getElementById("timer").innerHTML = "TIMER EXPIRED";
+     }
+   }, 1000);
 }
+// puzzle dynamic
