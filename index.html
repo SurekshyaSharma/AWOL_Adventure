@@ -9,9 +9,12 @@
     <title>AWL_Adventure</title>
         
     <!-- linking javascript to HTMl -->
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="./js/layout.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
+    <script type="text/javascript" src="./js/csv_interaction.js"></script>
     <!-- linking stylesheet to HTMl -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
     <!-- <link rel="stylesheet" href="pop-up.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,12 +31,24 @@
     
     <body onload="timer()">
         <div class="container">
+            <div class="team"></div>
+
             <div class="content-div">  <!-- content-div starts -->
+                <div class="login">  
+                    <br><br><br>
+                        <h6>Enter the code given by AWL</h6>
+                            <input type="text" placeholder="Enter TeamName"id="team-name" name="name"><br>
+                        <input type="password" placeholder="Enter the code" id="team-password" name="psw"><br><br>
+                    <button onclick ="loginPortal()">Start</button>
+                </div>
+
                 <div class="p_questions">
                     <div class="csv-read" id="csv-read">
+                        <br><br><br>
                         <button onclick="csv_array(data)">Question</button><br><br>
                     </div>
                 </div> <!-- p_questions-div ends -->
+
             </div> <!-- content- div  ends-->
 
             <div class="right-bar">  <!-- right-div  starts-->
@@ -58,9 +73,10 @@
                 </div>
                 <!-- div 6 -->
                 <div class="help-man">
-                    <div class="guide-right"><img onclick="pop_up()" class="avatar"   src="coronavirus.png" alt="Help_about"></div>
+                    <div class="guide-right"><img onclick="avatar_pop_up()" class="avatar"   src="coronavirus.png" alt="Help_about"></div>
                  </div>
             </div> <!-- right-bar ends-->
+
             <div class="bubble"></div>
         </div><!-- container  ends-->
     </body>
